@@ -21,11 +21,21 @@ function App() {
     return <h1>Loading...</h1>;
   }
 
+  let statusColor = "green";
+  if (status.status === "restricted") {
+    statusColor = "orange";
+  }
+  if (status.status === "closed") { 
+    statusColor = "red"
+  }
+
   return (
     <div style={{ padding: "2rem", fontFamily: "Arial" }}>
       <h1>Geopolitical Intelligence Tracker</h1>
 
-      <h2>Status: {status.status}</h2>
+      <h2 style={{ color: statusColor }}>
+      Status: {status.status}
+    </h2>
 
       <p>Brent Oil: ${status.brent}</p>
 
@@ -43,6 +53,9 @@ function App() {
         {status.hormuzIndex.escalationProbability.value}%
       </p>
     </div>
+  
+
+
   );
 }
 
