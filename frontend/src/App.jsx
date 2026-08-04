@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import "./App.css";
 
 function App() {
   const [status, setStatus] = useState(null);
@@ -18,7 +19,11 @@ function App() {
   }, []);
 
   if (!status) {
-    return <h1>Loading...</h1>;
+    return (
+  <div className="app">
+    <p>Loading...</p>
+  </div>
+);
   }
 
   let statusColor = "green";
@@ -30,25 +35,25 @@ function App() {
   }
 
   return (
-    <div style={{ padding: "2rem", fontFamily: "Arial" }}>
-      <h1>Geopolitical Intelligence Tracker</h1>
+    <div className="app">
+      <h1 className="title"> Geopolitical Intelligence Tracker</h1>
 
-      <h2 style={{ color: statusColor }}>
+      <h2 style={{ color: statusColor, marginBottom: "1rem" }}>
       Status: {status.status}
     </h2>
 
-      <p>Brent Oil: ${status.brent}</p>
+      <p className="metric"><b>Brent Oil:</b>${status.brent}</p>
 
-      <p>WTI: ${status.wti}</p>
+      <p className="metric"><b>WTI: </b> ${status.wti}</p>
 
-      <p>
-        Crisis Pressure:
+      <p className="metric">
+        <b>Crisis Pressure: </b>
         {" "}
         {status.hormuzIndex.crisisPressure.value}
       </p>
 
-      <p>
-        Escalation Probability:
+      <p className="metric">
+        <b>Escalation Probability:</b>
         {" "}
         {status.hormuzIndex.escalationProbability.value}%
       </p>
