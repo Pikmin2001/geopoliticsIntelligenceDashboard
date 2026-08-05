@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
+import OilCard from "./components/OilCard";
+import StatusCard from "./components/StatusCard";
+import RiskCard from "./components/RiskCard";
 
 function App() {
   const [status, setStatus] = useState(null);
@@ -35,28 +38,23 @@ function App() {
   }
 
   return (
-    <div className="app">
-      <h1 className="title"> Geopolitical Intelligence Tracker</h1>
+    <div className="dashboard">
+      <h1 className="title"> Geopolitical Intelligence Dashboard </h1>
 
-      <h2 style={{ color: statusColor, marginBottom: "1rem" }}>
-      Status: {status.status}
-    </h2>
+      <StatusCard
+        status={status.status}
+        />
 
-      <p className="metric"><b>Brent Oil:</b>${status.brent}</p>
+      <OilCard
+        brent={status.brent}
+        wti={status.wti} 
+      />
 
-      <p className="metric"><b>WTI: </b> ${status.wti}</p>
+      <RiskCard
+        pressure={status.hormuzIndex.crisisPressure.value}
+        escalation={status.hormuzIndex.escalationProbability.value}
+/>
 
-      <p className="metric">
-        <b>Crisis Pressure: </b>
-        {" "}
-        {status.hormuzIndex.crisisPressure.value}
-      </p>
-
-      <p className="metric">
-        <b>Escalation Probability:</b>
-        {" "}
-        {status.hormuzIndex.escalationProbability.value}%
-      </p>
     </div>
   
 
