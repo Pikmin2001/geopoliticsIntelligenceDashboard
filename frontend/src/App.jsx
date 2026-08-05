@@ -4,6 +4,8 @@ import "./App.css";
 import OilCard from "./components/OilCard";
 import StatusCard from "./components/StatusCard";
 import RiskCard from "./components/RiskCard";
+import TransitCard from "./components/TransitCard";
+import InsuranceCard from "./components/InsuranceCard.jsx";
 
 function App() {
   const [status, setStatus] = useState(null);
@@ -43,7 +45,7 @@ function App() {
   <h1 className="title">
     Geopolitical Intelligence Dashboard
   </h1>
-
+    <h1>Operational Status</h1>
   <div className="dashboard">
     
     <StatusCard
@@ -51,16 +53,34 @@ function App() {
       statusColor={statusColor}
     />
 
-    <OilCard
-      brent={status.brent}
-      wti={status.wti}
-    />
+    
 
     <RiskCard
       pressure={status.hormuzIndex.crisisPressure.value}
       escalation={status.hormuzIndex.escalationProbability.value}
     />
+
+    <TransitCard
+      count={status.transits.count}
+      throughput={status.transits.throughputPct}
+    />
   </div>
+    <h1>Energy Markets</h1>
+    <div className="dashboard">
+
+      <OilCard
+      brent={status.brent}
+      wti={status.wti}
+    />
+
+    <InsuranceCard
+      multiple={status.insurance.multiple}
+      vlccPremiumLow={status.insurance.vlccPremiumLow}
+      vlccPremiumHigh={status.insurance.vlccPremiumHigh}
+    />
+
+    </div>
+
 </div>
   
 

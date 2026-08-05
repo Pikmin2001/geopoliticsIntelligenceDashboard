@@ -14,6 +14,7 @@ def get_current_status():
     return response.json()
 
 
+
 if __name__ == "__main__":
     status = get_current_status()
     print(status)

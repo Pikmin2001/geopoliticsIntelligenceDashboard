@@ -3,9 +3,9 @@ function TransitCard({ count, throughput }) {
     <div className="card">
       <h2>Ship Traffic</h2>
 
-      <p>Transit Count: {count}</p>
+      <p><b>Transit Count:</b> {count}</p>
 
-      <p>Throughput: {throughput}%</p>
+      <p><b>Throughput:</b> {throughput}%</p>
     </div>
   );
 }
