@@ -45,9 +45,9 @@ body {
 .dashboard {
   display: grid;
 
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
 
-  gap: 25px;
+  gap: 100px;
 }
 
 .card {
@@ -77,8 +77,8 @@ body {
   color:#22c55e;
 }
 
-.yellow{
-  color:#facc15;
+.orange{
+  color:#fa7c15;
 }
 
 .red{

@@ -38,24 +38,30 @@ function App() {
   }
 
   return (
-    <div className="dashboard">
-      <h1 className="title"> Geopolitical Intelligence Dashboard </h1>
 
-      <StatusCard
-        status={status.status}
-        />
+    <div className="app">
+  <h1 className="title">
+    Geopolitical Intelligence Dashboard
+  </h1>
 
-      <OilCard
-        brent={status.brent}
-        wti={status.wti} 
-      />
+  <div className="dashboard">
+    
+    <StatusCard
+      status={status.status}
+      statusColor={statusColor}
+    />
 
-      <RiskCard
-        pressure={status.hormuzIndex.crisisPressure.value}
-        escalation={status.hormuzIndex.escalationProbability.value}
-/>
+    <OilCard
+      brent={status.brent}
+      wti={status.wti}
+    />
 
-    </div>
+    <RiskCard
+      pressure={status.hormuzIndex.crisisPressure.value}
+      escalation={status.hormuzIndex.escalationProbability.value}
+    />
+  </div>
+</div>
   
 
 

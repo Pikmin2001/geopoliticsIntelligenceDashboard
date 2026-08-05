@@ -1,16 +1,12 @@
-function StatusCard({ status }) {
+function StatusCard({ status, statusColor }) {
   return (
-      <div className="card">
-      <h2>Strait Status</h2>
+    <div className="card">
+      <h2>Status</h2>
 
-      <p>
+      <h1 className={statusColor}>
         {status}
-      </p>
-
-
+      </h1>
     </div>
-
   );
 }
-
 export default StatusCard;

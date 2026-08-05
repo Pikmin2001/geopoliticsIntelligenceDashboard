@@ -14,5 +14,5 @@ function OilCard({brent, wti}) {
     )
     }
 
-export default OilCard
+export default OilCard;
 
