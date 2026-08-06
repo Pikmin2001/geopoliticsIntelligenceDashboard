@@ -42,10 +42,18 @@ function App() {
   return (
 
     <div className="app">
-  <h1 className="title">
+      <div className="header">
+        <h1 className="title">
     Geopolitical Intelligence Dashboard
-  </h1>
-    <h1>Operational Status</h1>
+        </h1>
+
+      <p className="updated">
+        Last Updated: {status.asOf}
+      </p>
+    </div>
+  
+
+    <h1 className="sectionTitle">Operational Status</h1>
   <div className="dashboard">
     
     <StatusCard
@@ -65,7 +73,7 @@ function App() {
       throughput={status.transits.throughputPct}
     />
   </div>
-    <h1>Energy Markets</h1>
+    <h1 className="sectionTitle" >Energy Markets</h1>
     <div className="dashboard">
 
       <OilCard
@@ -78,6 +86,8 @@ function App() {
       vlccPremiumLow={status.insurance.vlccPremiumLow}
       vlccPremiumHigh={status.insurance.vlccPremiumHigh}
     />
+
+    
 
     </div>
 

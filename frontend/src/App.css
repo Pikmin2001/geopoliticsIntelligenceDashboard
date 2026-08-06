@@ -18,6 +18,13 @@ body {
     margin-bottom: 1rem;
 }
 
+.sectionTitle{
+      font-family: 'Courier New', monospace;
+      color: #4AF262;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+}
+
 .metric h1 {
     padding: 2rem;
     font-family: "Courier New", monospace;
@@ -25,7 +32,7 @@ body {
 }
 
 .title {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 2rem;
   padding: 2rem;
   font-family: "Courier New", monospace;
@@ -45,10 +52,27 @@ body {
 .dashboard {
   display: grid;
 
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
 
   gap: 100px;
 }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 1px solid #4AF262;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    
+}
+
+.updated {
+    color: #888;
+    font-size: 0.85rem;
+    font-style: italic;
+}
+
 
 .card {
     background: #111111;
