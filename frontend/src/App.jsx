@@ -6,6 +6,7 @@ import StatusCard from "./components/StatusCard";
 import RiskCard from "./components/RiskCard";
 import TransitCard from "./components/TransitCard";
 import InsuranceCard from "./components/InsuranceCard.jsx";
+import DataHealthCard from "./components/DataHealthCard.jsx";
 
 function App() {
   const [status, setStatus] = useState(null);
@@ -48,13 +49,13 @@ function App() {
         </h1>
 
       <p className="updated">
-        Last Updated: {status.asOf}
+        Last Updated: {new Date(status.asOf).toLocaleString()}
       </p>
     </div>
   
 
-    <h1 className="sectionTitle">Operational Status</h1>
-  <div className="dashboard">
+    <h2 className="sectionTitle">Operational Status</h2>
+  <div className="dashboard singleCard">
     
     <StatusCard
       status={status.status}
@@ -73,7 +74,7 @@ function App() {
       throughput={status.transits.throughputPct}
     />
   </div>
-    <h1 className="sectionTitle" >Energy Markets</h1>
+    <h2 className="sectionTitle" >Energy Markets</h2>
     <div className="dashboard">
 
       <OilCard
@@ -87,8 +88,14 @@ function App() {
       vlccPremiumHigh={status.insurance.vlccPremiumHigh}
     />
 
+    </div>
     
-
+    <h2 className="sectionTitle" >System Health</h2>
+    <div className="singleCard">
+    <DataHealthCard
+      ships={status.dataHealth.ships.source}
+      oil={status.dataHealth.oil.source}
+    />
     </div>
 
 </div>

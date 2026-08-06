@@ -57,6 +57,14 @@ body {
   gap: 100px;
 }
 
+.singleCard {
+  display: flex;
+
+  justify-content: center;
+
+  
+}
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -78,7 +86,7 @@ body {
     background: #111111;
 
     border: 1px solid #4AF262;
-
+    padding-top: 2.5rem;
     border-radius: 8px;
 
     padding: 24px;
