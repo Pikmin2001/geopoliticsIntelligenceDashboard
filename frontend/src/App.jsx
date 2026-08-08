@@ -22,6 +22,10 @@ function App() {
     }
 
     fetchStatus();
+
+    const interval = setInterval(fetchStatus, 60000);
+
+    return () => clearInterval(interval);
   }, []);
 
   if (!status) {
