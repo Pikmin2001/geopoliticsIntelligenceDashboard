@@ -7,6 +7,7 @@ import RiskCard from "./components/RiskCard";
 import TransitCard from "./components/TransitCard";
 import InsuranceCard from "./components/InsuranceCard.jsx";
 import DataHealthCard from "./components/DataHealthCard.jsx";
+import NewsCard from "./components/NewsCard";
 
 function App() {
   const [status, setStatus] = useState(null);
@@ -22,11 +23,26 @@ function App() {
     }
 
     fetchStatus();
-
-    const interval = setInterval(fetchStatus, 60000);
+    const REFRESH_INTERVAL = 60000;
+    const interval = setInterval(fetchStatus, REFRESH_INTERVAL); //fetch status every minute (60000 mil secs)
 
     return () => clearInterval(interval);
   }, []);
+
+  const [news, setNews] = useState(null);
+
+useEffect(() => {
+  async function fetchNews() {
+    try {
+      const response = await axios.get("http://127.0.0.1:8000/news");
+      setNews(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  fetchNews();
+}, []);
 
   if (!status) {
     return (
@@ -101,6 +117,15 @@ function App() {
       oil={status.dataHealth.oil.source}
     />
     </div>
+
+<h1 className="sectionTitle">News</h1>
+{news && news.news.map((article) => (
+  <NewsCard
+    key={article.id}
+    title={article.title}
+    description={article.description}
+  />
+))}
 
 </div>
   

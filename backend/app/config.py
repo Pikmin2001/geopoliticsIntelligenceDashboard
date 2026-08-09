@@ -6,6 +6,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 class Settings(BaseSettings):
     
     base_url: str
+    base_url_news: str
+    api_key_news: str
 
     model_config = SettingsConfigDict(
         env_file=BASE_DIR / ".env"
