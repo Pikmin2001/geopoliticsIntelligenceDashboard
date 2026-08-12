@@ -9,13 +9,15 @@ import InsuranceCard from "./components/InsuranceCard.jsx";
 import DataHealthCard from "./components/DataHealthCard.jsx";
 import NewsCard from "./components/NewsCard";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 function App() {
   const [status, setStatus] = useState(null);
 
   useEffect(() => {
     async function fetchStatus() {
       try {
-        const response = await axios.get("http://127.0.0.1:8000/status");
+        const response = await axios.get(`${API_URL}/status`);
         setStatus(response.data);
       } catch (error) {
         console.error(error);
@@ -34,7 +36,7 @@ function App() {
 useEffect(() => {
   async function fetchNews() {
     try {
-      const response = await axios.get("http://127.0.0.1:8000/news");
+      const response = await axios.get(`${API_URL}/news`);
       setNews(response.data);
     } catch (error) {
       console.error(error);
