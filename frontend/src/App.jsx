@@ -128,6 +128,7 @@ useEffect(() => {
     title={article.title}
     author={article.author}
     description={article.description}
+    url={article.url}
 
   />
 ))}
