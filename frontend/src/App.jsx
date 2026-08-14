@@ -8,7 +8,7 @@ import TransitCard from "./components/TransitCard";
 import InsuranceCard from "./components/InsuranceCard.jsx";
 import DataHealthCard from "./components/DataHealthCard.jsx";
 import NewsCard from "./components/NewsCard";
-import { Analytics } from "frontend/@vercel/analytics/next"
+//import { Analytics } from "frontend/@vercel/analytics/next"
 
 const API_URL = import.meta.env.VITE_API_URL;
 
