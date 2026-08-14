@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function NewsCard({ title, description }) {
+function NewsCard({ title, description, author }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -17,7 +17,13 @@ function NewsCard({ title, description }) {
         <div className="card-body">
           <p>{description}</p>
         </div>
+
       )}
+
+       <div className="card-body">
+          <p>{author}</p>
+        </div>
+        
     </div>
   );
 }

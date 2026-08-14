@@ -126,7 +126,9 @@ useEffect(() => {
   <NewsCard
     key={article.id}
     title={article.title}
+    author={article.author}
     description={article.description}
+
   />
 ))}
 
