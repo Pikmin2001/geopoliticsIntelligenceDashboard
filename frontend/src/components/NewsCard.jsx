@@ -20,7 +20,7 @@ function NewsCard({ title, description, author, url }) {
 
       )}
 
-       <a href={Url} target="_blank" rel="noopener noreferrer">
+       <a href={url} target="_blank" rel="noopener noreferrer">
   
       </a>
 
