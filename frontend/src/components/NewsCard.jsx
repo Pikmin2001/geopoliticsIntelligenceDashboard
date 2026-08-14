@@ -20,8 +20,8 @@ function NewsCard({ title, description, author, url }) {
 
       )}
 
-       <a href={url} target="_blank" rel="noopener noreferrer">
-  
+       <a href={url} >
+          Here
       </a>
 
     </div>
