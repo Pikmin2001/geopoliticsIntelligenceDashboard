@@ -5,7 +5,7 @@ from app.config import settings
 
 def get_news():
     response = requests.get(
-        f"{settings.base_url_news}", params={"language": "en", "page_size": 4, "keywords": "Iran"}, 
+        f"{settings.base_url_news}", params={"language": "en", "page_size": 4, "keywords": "Trump"}, 
         headers={"Authorization": settings.api_key_news}, timeout=10
         )
     
