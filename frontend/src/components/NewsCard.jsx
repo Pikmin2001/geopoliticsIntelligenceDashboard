@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function NewsCard({ title, description, author, url }) {
+function NewsCard({ title, description, author, url, id }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
