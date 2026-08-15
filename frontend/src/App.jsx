@@ -122,6 +122,9 @@ useEffect(() => {
     </div>
 
 <h1 className="sectionTitle">News</h1>
+
+<p>Number of articles: {news?.news?.length}</p>
+
 {news && news.news.map((article) => (
   <NewsCard
     key={article.id}
