@@ -5,8 +5,8 @@ from app.config import settings
 def get_news():
     params = {
         "language": "en",
-        "page_size": 10,
-        "keywords": "Ukraine",
+        "page_size": 5,
+        "keywords": "Iran",
     }
 
     response = requests.get(
@@ -21,10 +21,5 @@ def get_news():
     response.raise_for_status()
 
     data = response.json()
-
-    print("=== NEWS DEBUG ===")
-    print("URL:", response.url)
-    print("COUNT:", len(data.get("news", [])))
-    print("TITLES:", [article["title"] for article in data.get("news", [])])
-
+    # News API
     return data
