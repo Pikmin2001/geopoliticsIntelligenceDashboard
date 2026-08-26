@@ -17,7 +17,7 @@ def get_news():
         },
         timeout=10,
     )
-
+    # testing testing testing deployment
     response.raise_for_status()
 
     data = response.json()

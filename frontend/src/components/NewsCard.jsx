@@ -1,12 +1,15 @@
 import { useState } from "react";
 
-function NewsCard({ title, description, author, url, key }) {
+function NewsCard({ title, description, author, url }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="card">
       <div className="card-header">
-        <h3>{title}</h3><p>{author}</p>
+        <div>
+          <h3>{title}</h3>
+          <p>{author}</p>
+        </div>
 
         <button onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? "Collapse" : "Expand"}
@@ -17,13 +20,11 @@ function NewsCard({ title, description, author, url, key }) {
         <div className="card-body">
           <p>{description}</p>
         </div>
-
       )}
 
-       <a href={url} >
-          Here
+      <a href={url} target="_blank" rel="noopener noreferrer">
+        Read Article
       </a>
-
     </div>
   );
 }
