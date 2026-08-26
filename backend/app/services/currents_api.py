@@ -6,7 +6,7 @@ def get_news():
     params = {
         "language": "en",
         "page_size": 5,
-        "keywords": "Iran",
+        "keywords": "Iran, Reuters",
     }
 
     response = requests.get(
